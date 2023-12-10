@@ -5,8 +5,7 @@ function trataErro(erro) {
 	throw new Error(chalk.red(erro.code, "não existe arquivo no diretório"));
 }
 
-// async/await 
- 
+// async/await  
 async function pegaArquivo(caminhoDoArquivo) {
   try {
      	const encoding = "utf-8";
@@ -19,16 +18,8 @@ async function pegaArquivo(caminhoDoArquivo) {
     trataErro(erro)
   }  
 }
-// promises com Then()
-
-/* 
-function pegaArquivo(caminhoDoArquivo) {
-	const encoding = "utf-8";
-	fs.promises
-		.readFile(caminhoDoArquivo, encoding)
-		.then(texto => console.log(chalk.green(texto)))
-		.catch( trataErro());
-} */
 
 pegaArquivo("./arquivos/texto.md");
 pegaArquivo("./arquivos/");
+
+/* \[[^[\]]*?\] */
