@@ -23,3 +23,5 @@ pegaArquivo("./arquivos/texto.md");
 pegaArquivo("./arquivos/");
 
 /* \[[^[\]]*?\] */
+
+/* /\(http?s:\/\/[^\s?#.].[^\s]*\)/gm */
