@@ -8,7 +8,6 @@ function extraiLinks(texto) {
 	return resultados;
 }
 
-// async/await
 async function pegaArquivo(caminhoDoArquivo) {
 	try {
 		const encoding = "utf-8";
@@ -24,16 +23,3 @@ function trataErro(erro) {
 }
 
 pegaArquivo("./arquivos/texto.md");
-
-/* \[[^[\]]*?\] */
-
-/* /\(http?s:\/\/[^\s?#.].[^\s]*\) */
-
-//  regex unificado:
-// \[[^[\]]*?\]/\(http?s:\/\/[^\s?#.].[^\s]*\)
-
-//  regex finalizado:
-// \[([^[\]]*?)\]\((http?s:\/\/[^\s?#.].[^\s]*\))
-
-// regex apos selecao do flavor verificado pelo site : https://regex101.com/
-// /\[([^[\]]*?)\]\((http?s:\/\/[^\s?#.].[^\s]*\))/gm;
