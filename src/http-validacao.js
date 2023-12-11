@@ -4,6 +4,21 @@ function extraiLinks(arrayLinks) {
 	return links;
 }
 
-export default function listaValidada(listaDeLinks) {
-	return extraiLinks(listaDeLinks);
+async function checaStatus(listaURLs) {
+	const arrayStatus = await Promise.all(
+		listaURLs.map(async url => {
+			const response = await fetch(url);
+			return response.status;
+		})
+	);
+
+	return arrayStatus;
 }
+
+export default async function listaValidada(listaDeLinks) {
+	const links = extraiLinks(listaDeLinks);
+	const status = await checaStatus(links);
+	return status;
+}
+
+// [gatinho salsicha](http://gatinhosalsicha.com.br/)
