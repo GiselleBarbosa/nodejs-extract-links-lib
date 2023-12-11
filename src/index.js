@@ -22,4 +22,5 @@ function trataErro(erro) {
 	throw new Error(chalk.red(erro.code, "não existe arquivo no diretório"));
 }
 
-pegaArquivo("./arquivos/texto.md");
+
+export default pegaArquivo;
